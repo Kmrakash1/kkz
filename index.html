@@ -1,0 +1,440 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPRIUM - App Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/banner.css">
+    <link rel="stylesheet" href="styles/apps.css">
+    <link rel="stylesheet" href="styles/blog.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #4CAF50;
+            --accent: #FF6B6B;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--background);
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 1rem 2rem;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            color: white !important;
+            font-weight: 700;
+        }
+
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .navbar-brand:hover img {
+            transform: rotate(360deg);
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: white;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .hero {
+            padding: 5rem 0;
+            background: linear-gradient(45deg, #6C63FF11, #4CAF5011);
+        }
+
+        .app-card {
+            position: relative;
+            padding-bottom: 4rem;
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            margin-bottom: 2rem;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .category-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+
+        .search-bar {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .search-input {
+            border-radius: 30px;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 3rem 0;
+            }
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 25%;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .app-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .download-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            background: #45a049;
+            color: white;
+        }
+
+        .premium-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 1rem;
+        }
+
+        .app-title {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Update these banner carousel styles */
+        .banner-carousel {
+            background: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .banner-slide {
+            height: 200px;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            background: none;
+            margin: 0 5px;
+        }
+
+        .banner-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+
+        .banner-slide img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 1;
+        }
+
+        .banner-content {
+            color: white;
+            z-index: 2;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .banner-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .banner-content p {
+            font-size: 1rem;
+            opacity: 1;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .carousel-item {
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .banner-logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .banner-btn {
+            background: linear-gradient(135deg, #FF6B6B, #FF4B4B);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .banner-btn:hover {
+            transform: scale(1.05);
+            color: white;
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .carousel-control-prev, .carousel-control-next {
+            width: 5%;
+            opacity: 0.8;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: rgba(0,0,0,0.5);
+            padding: 1.5rem;
+            border-radius: 50%;
+        }
+
+        .blog-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .blog-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .blog-card .btn-primary {
+            background: var(--primary);
+            border: none;
+            border-radius: 20px;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .blog-card .btn-primary:hover {
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="APPRIUM Logo">
+                APPRIUM
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-section="home">
+                            <img src="home_icon.png" class="nav-icon" alt="Home">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-section="apps">
+                            <img src="apps_icon.png" class="nav-icon" alt="Apps">
+                            Apps
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-section="games">
+                            <img src="games_icon.png" class="nav-icon" alt="Games">
+                            Games
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-section="blog">
+                            <img src="blog_icon.png" class="nav-icon" alt="Blog">
+                            Blog
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dynamic content containers -->
+    <div id="bannerContainer"></div>
+    <div id="heroContainer"></div>
+    <div id="featuredAppsContainer"></div>
+    <div id="blogContainer"></div>
+    <div id="legalContainer"></div>
+
+    <!-- New About Section -->
+    <footer class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="about-card">
+                        <h3>About APPRIUM</h3>
+                        <p>APPRIUM is your premium destination for modified and enhanced versions of popular mobile applications. We curate and provide access to feature-rich versions of your favorite apps.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="about-card">
+                        <h3>Quick Links</h3>
+                        <ul class="about-links">
+                            <li><a href="#" class="legal-link" data-page="terms"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                            <li><a href="#" class="legal-link" data-page="privacy"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                            <li><a href="#" class="legal-link" data-page="dmca"><i class="fas fa-chevron-right"></i> DMCA</a></li>
+                            <li><a href="#" class="legal-link" data-page="contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="about-card">
+                        <h3>Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="https://t.me/apprium" class="social-link" target="_blank">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="https://instagram.com/bhatakash07" class="social-link" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com/@ANONYMOUSWHAT" class="social-link" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-bar">
+                <p>© 2024 APPRIUM. All rights reserved. All trademarks, service marks, trade names, product names, and logos are the property of their respective owners.</p>
+                <p class="disclaimer">Disclaimer: APPRIUM is not affiliated with any app developers or companies mentioned on this website.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/templates.js" type="module"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
