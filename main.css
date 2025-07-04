@@ -1,0 +1,463 @@
+:root {
+    --primary: #6C63FF;
+    --secondary: #4CAF50;
+    --accent: #FF6B6B;
+    --background: #f8f9fa;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+}
+
+.hero {
+    padding: 5rem 0;
+    background: linear-gradient(45deg, #6C63FF11, #4CAF5011);
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: var(--accent);
+    bottom: -10px;
+    left: 25%;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.search-input {
+    border-radius: 30px;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #eee;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+}
+
+/* New About Section Styles */
+.about-section {
+    background: linear-gradient(135deg, #1a1c23 0%, #2a2d35 100%);
+    color: #fff;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+}
+
+.about-card {
+    padding: 1.5rem;
+    height: 100%;
+    border-left: 3px solid var(--accent);
+    transition: transform 0.3s;
+}
+
+.about-card:hover {
+    transform: translateX(5px);
+}
+
+.about-card h3 {
+    color: var(--accent);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.about-card p {
+    color: #a0a3ad;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.about-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-links li {
+    margin-bottom: 1rem;
+}
+
+.about-links a {
+    color: #a0a3ad;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.about-links a:hover {
+    color: var(--accent);
+    transform: translateX(5px);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-link:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.copyright-bar {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.copyright-bar p {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+}
+
+.disclaimer {
+    color: #555;
+    font-style: italic;
+}
+
+/* Add these new styles for the coming soon section */
+.coming-soon-section {
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.coming-soon-icon {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+.coming-soon-icon i {
+    font-size: 4rem;
+    color: white;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.notification-box {
+    background: linear-gradient(135deg, #0088cc, #005580);
+    padding: 2rem;
+    border-radius: 15px;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.notification-box i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: ring 2s ease-in-out infinite;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(15deg);
+    }
+    20% {
+        transform: rotate(-15deg);
+    }
+    30% {
+        transform: rotate(5deg);
+    }
+    40% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.notification-box h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.notification-box p {
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.telegram-notify-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: white;
+    color: #0088cc;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.telegram-notify-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    color: #0088cc;
+}
+
+/* Game Card Styles */
+.game-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.game-banner {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.game-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.game-card:hover .game-img {
+    transform: scale(1.05);
+}
+
+.game-content {
+    padding: 1.5rem;
+}
+
+.game-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.game-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.game-info i {
+    color: var(--primary);
+}
+
+.game-content p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.game-content .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    width: 100%;
+    justify-content: center;
+}
+
+.game-content .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: white;
+}
+
+/* Add these new styles for game downloads */
+.download-now-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.download-now-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+.game-details {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.detail-item i {
+    color: var(--primary);
+    width: 20px;
+}
+
+.download-game-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff);
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: transform 0.3s;
+}
+
+.download-game-btn:hover {
+    transform: translateY(-2px);
+    color: white;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .about-card {
+        margin-bottom: 2rem;
+    }
+    
+    .copyright-bar {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+}

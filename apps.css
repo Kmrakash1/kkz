@@ -1,0 +1,321 @@
+.app-card {
+    position: relative;
+    padding-bottom: 4rem;
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.category-badge {
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin: 0.5rem 0;
+}
+
+.app-title {
+    display: flex;
+    align-items: center;
+}
+
+.premium-badge {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}
+
+.app-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.download-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    transition: transform 0.2s;
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+    background: #45a049;
+    color: white;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #FF4444;  /* Bright red color */
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pagination-container {
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.pagination-container .btn {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.pagination-container .btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.pagination-container .btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.pagination-container .btn-outline-primary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.pagination-container .btn:hover {
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal-content {
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.modal-header {
+    padding: 1rem 1rem 0;
+}
+
+.btn-close {
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.mod-info-content {
+    padding: 1rem;
+}
+
+.mod-info-content h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.mod-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.mod-features {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.mod-features h4 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: #666;
+}
+
+.feature-list i {
+    color: #4CAF50;
+}
+
+.telegram-invite {
+    background: linear-gradient(135deg, #0088cc, #005580);
+    border-radius: 15px;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.telegram-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.telegram-icon i {
+    font-size: 2rem;
+}
+
+.telegram-invite h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.telegram-invite p {
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.telegram-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: #0088cc;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.telegram-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    color: #0088cc;
+}
+
+.download-mod-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.download-mod-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    color: white;
+    background: linear-gradient(135deg, #45a049, #388E3C);
+}
+
+.download-mod-btn i {
+    font-size: 1.2rem;
+}
+
+/* Add these new styles for the search functionality */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.search-input {
+    border-radius: 30px 0 0 30px;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #eee;
+    border-right: none;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    box-shadow: none;
+    border-color: var(--primary);
+}
+
+.search-btn {
+    border-radius: 0 30px 30px 0;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary);
+    border: 2px solid var(--primary);
+    color: white;
+    transition: all 0.3s;
+}
+
+.search-btn:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    transform: translateX(2px);
+}
+
+.search-btn i {
+    font-size: 1.1rem;
+}

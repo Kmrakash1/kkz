@@ -1,0 +1,99 @@
+/* Legal pages styles */
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.legal-content h2 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+}
+
+.legal-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.legal-content ul {
+    list-style: none;
+    padding-left: 1.2rem;
+    margin: 1rem 0;
+}
+
+.legal-content ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #666;
+}
+
+.legal-content ul li:before {
+    content: '•';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.contact-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.email-link {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    background: #f8f9fa;
+    margin: 1rem 0;
+    transition: all 0.3s;
+}
+
+.email-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: var(--accent);
+}
+
+/* Add these styles for the close button */
+.btn-close {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+    background-color: #e9ecef;
+    transform: rotate(90deg);
+}

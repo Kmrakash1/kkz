@@ -1,0 +1,29 @@
+/* New file for component-specific styles that were previously inline */
+:root {
+    --primary: #6C63FF;
+    --secondary: #4CAF50;
+    --accent: #FF6B6B;
+    --background: #f8f9fa;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .hero {
+        padding: 3rem 0;
+    }
+}
+
+/* Removed redundant styles that are now in their respective CSS files */
